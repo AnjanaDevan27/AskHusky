@@ -272,14 +272,3 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ECS is configured to scale to zero at midnight ET and scale up at 8am ET to minimize cost.
 
----
-
-## Scoping Validation
-
-Project scoped using Dr. Ramin Mohammadi's MLOps framework at mlwithramin.com across seven dimensions: need for AI, data assessment, impact assessment, timeline, model evaluation, infrastructure, and risk assessment. All seven dimensions pass.
-
----
-
-## Author
-
-Built by Anjana — targeting Data Scientist, ML Engineer, Data Engineer, and LLM Engineer roles.
