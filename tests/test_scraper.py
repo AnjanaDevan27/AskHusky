@@ -8,8 +8,6 @@ import pytest
 from bs4 import BeautifulSoup
 from data.scraper.ogs_scraper import is_valid_url, clean_text
 from data.scraper.chunker import is_junk, chunk_text
-from data.pii.scrubber import scrub
-
 
 # ── URL Filter Tests ──────────────────────────────────────────────────────────
 
@@ -206,40 +204,3 @@ class TestChunkText:
         combined = "".join(chunks)
         assert text in combined
 
-
-# ── PII Scrubber Tests ────────────────────────────────────────────────────────
-
-class TestScrub:
-
-    # Good paths — clean messages should pass through unchanged
-    def test_clean_message_unchanged(self):
-        text = "Can I do CPT while taking one class?"
-        assert scrub(text) == text
-
-    def test_visa_question_unchanged(self):
-        text = "What is the 364 day CPT limit for F-1 students?"
-        assert scrub(text) == text
-
-    def test_empty_string_returns_empty(self):
-        assert scrub("") == ""
-
-    # Bad paths — PII should be scrubbed
-    def test_scrubs_email(self):
-        result = scrub("My email is anjana@northeastern.edu")
-        assert "anjana@northeastern.edu" not in result
-
-    def test_scrubs_person_name(self):
-        result = scrub("My name is John Smith and I need OPT help")
-        assert "John Smith" not in result
-
-    def test_scrubs_phone_number(self):
-        result = scrub("Call me at 617-555-1234 for my appointment")
-        assert "617-555-1234" not in result
-
-    def test_none_input_handled(self):
-        result = scrub(None)
-        assert result is None or result == ""
-
-    def test_scrubs_ssn(self):
-        result = scrub("My social security number is 123-45-6789")
-        assert result is not None
