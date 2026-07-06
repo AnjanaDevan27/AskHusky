@@ -1,13 +1,17 @@
+cat > .github/workflows/ci.yml << 'EOF'
 name: AskHusky CI
 
 on:
   push:
-    branches: [main, feature/**]
+    branches:
+      - main
+      - "feature/**"
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,4 +29,14 @@ test:
           pip install beautifulsoup4 requests sentence-transformers \
             presidio-analyzer presidio-anonymizer spacy pytest \
             python-dotenv pinecone mlflow
-          python -m spacy download en_core_web_lg
+
+      - name: Download spacy model
+        run: python -m spacy download en_core_web_lg
+
+      - name: Run tests
+        env:
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+          PINECONE_INDEX_NAME: askhusky
+          MLFLOW_TRACKING_URI: sqlite:///mlflow.db
+        run: pytest tests/test_scraper.py -v
+EOF
