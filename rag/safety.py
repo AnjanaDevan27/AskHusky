@@ -49,6 +49,10 @@ URGENCY_KEYWORDS = [
     # Visa denial / overstay
     "visa denied",
     "visa revoked",
+    "visa was revoked",
+    "visa has been revoked",
+    "visa denied",
+    "visa was denied",
     "overstayed",
     "out of status",
     "unlawful presence",
