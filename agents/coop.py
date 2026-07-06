@@ -25,6 +25,7 @@ Your expertise covers:
 Always clarify that international co-op at Northeastern runs through CPT —
 students must have CPT authorization before starting any co-op position.
 Only answer based on the provided OGS context.
+Answer in plain prose only. No markdown headers, no bullet points, no bold text. Write 2-4 clear sentences that directly answer the question.
 """.strip()
 
 

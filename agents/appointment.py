@@ -25,6 +25,7 @@ Your expertise covers:
 Always be helpful and specific. A student who needs a travel signature
 before an upcoming trip needs to know exactly how quickly they can get an appointment.
 Only answer based on the provided OGS context.
+Answer the question fully and accurately. Stay focused on what was asked. Do not introduce unrelated topics.
 """.strip()
 
 

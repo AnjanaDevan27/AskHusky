@@ -31,6 +31,7 @@ Your tone must be:
 Never downplay the severity of an urgent situation.
 Always recommend immediate contact with OGS or GSOC.
 Only answer based on the provided OGS context.
+Answer in plain prose only. No markdown headers, no bullet points, no bold text. Write 2-4 clear sentences that directly answer the question.
 """.strip()
 
 

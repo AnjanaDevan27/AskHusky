@@ -63,13 +63,13 @@ Student question: {query}"""
 
         # Step 3 — Generate answer
         response = client.messages.create(
-            model="claude-haiku-4-5",
-            max_tokens=1000,
-            system=self.system_prompt,
-            messages=[
-                {"role": "user", "content": user_message}
-            ]
-        )
+        model="claude-haiku-4-5",
+        max_tokens=500,
+        system=self.system_prompt,
+        messages=[
+            {"role": "user", "content": user_message}
+        ]
+    )
 
         answer = response.content[0].text.strip()
         logger.info(f"[{self.name}] Answer generated ({len(answer)} chars)")

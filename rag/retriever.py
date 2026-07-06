@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 EMBED_MODEL = "all-MiniLM-L6-v2"
 INDEX_NAME  = os.getenv("PINECONE_INDEX_NAME", "askhusky")
-TOP_K       = 5  # number of chunks to retrieve per query
+TOP_K       = 8  # number of chunks to retrieve per query
 
 # ── Lazy singletons — load once, reuse across calls ───────────────────────────
 
@@ -50,24 +50,16 @@ def _get_index():
 # ── Retriever ─────────────────────────────────────────────────────────────────
 
 def retrieve(query: str, top_k: int = TOP_K) -> list[dict]:
-    """
-    Retrieve the most relevant OGS chunks for a student query.
-
-    Args:
-        query: The student's question
-        top_k: Number of chunks to return (default 5)
-
-    Returns:
-        List of dicts with text, url, title, and score
-    """
     if not query or not query.strip():
-        logger.warning("Empty query received — returning no results")
         return []
 
     model = _get_model()
     index = _get_index()
 
-    embedding = model.encode([query]).tolist()[0]
+    # Expand query for better retrieval
+    expanded_query = f"F-1 student visa Northeastern OGS: {query}"
+
+    embedding = model.encode([expanded_query]).tolist()[0]
 
     results = index.query(
         vector=embedding,
