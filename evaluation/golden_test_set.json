@@ -1,0 +1,127 @@
+[
+    {
+      "question": "What happens if I exceed 364 days of full-time CPT?",
+      "ground_truth": "If an F-1 student exceeds 364 days of full-time CPT, they lose eligibility for OPT at that degree level permanently.",
+      "agent": "cpt"
+    },
+    {
+      "question": "How many months of OPT can an F-1 student get after graduation?",
+      "ground_truth": "F-1 students are eligible for 12 months of post-completion OPT after graduation.",
+      "agent": "opt"
+    },
+    {
+      "question": "What is STEM OPT and how long is the extension?",
+      "ground_truth": "STEM OPT is a 24-month extension available to F-1 students who graduated with a STEM degree and are employed by an E-Verify employer.",
+      "agent": "opt"
+    },
+    {
+      "question": "How early can I apply for OPT before my graduation date?",
+      "ground_truth": "Students can apply for OPT up to 90 days before their program end date.",
+      "agent": "opt"
+    },
+    {
+      "question": "What is the difference between part-time and full-time CPT?",
+      "ground_truth": "Part-time CPT is 20 hours per week or less. Full-time CPT is more than 20 hours per week. Only full-time CPT days count toward the 364-day OPT eligibility limit.",
+      "agent": "cpt"
+    },
+    {
+      "question": "Do I need a travel signature to re-enter the United States?",
+      "ground_truth": "Yes, F-1 students need a valid travel signature on their I-20 to re-enter the United States. The travel signature is typically valid for one year.",
+      "agent": "travel"
+    },
+    {
+      "question": "How long is a travel signature valid?",
+      "ground_truth": "A travel signature is typically valid for one year from the date it was signed by an OGS advisor.",
+      "agent": "travel"
+    },
+    {
+      "question": "What is the minimum course load requirement for F-1 students?",
+      "ground_truth": "F-1 undergraduate students must take at least 12 credits per semester. F-1 graduate students must be enrolled full-time as defined by their program.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "How many hours per week can I work on campus as an F-1 student?",
+      "ground_truth": "F-1 students may work up to 20 hours per week on campus during the academic semester, and full-time during official school breaks.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "What is a grace period for F-1 students after graduation?",
+      "ground_truth": "F-1 students are granted a 60-day grace period after their program end date to prepare to leave the US, transfer, or change status.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "What GPA do I need to be eligible for co-op at Northeastern?",
+      "ground_truth": "International students need to meet Northeastern's co-op GPA requirements and must have CPT authorization before starting any co-op position.",
+      "agent": "coop"
+    },
+    {
+      "question": "Do I need to be enrolled in classes during my co-op?",
+      "ground_truth": "International students on co-op must be enrolled in the required EXED co-op course to maintain their F-1 status during the co-op period.",
+      "agent": "coop"
+    },
+    {
+      "question": "What is SEVIS and why does it matter for F-1 students?",
+      "ground_truth": "SEVIS is the Student and Exchange Visitor Information System, a database maintained by the US government that tracks F-1 students. Maintaining a valid SEVIS record is required to maintain F-1 status.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "What happens during the 60-day grace period after my program ends?",
+      "ground_truth": "During the 60-day grace period, F-1 students must either depart the US, apply to transfer to another school, change their visa status, or apply for OPT. They cannot work during this period.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "Can I do CPT in my first year of studies?",
+      "ground_truth": "Generally, F-1 students must complete one full academic year before being eligible for CPT. Exceptions may exist for graduate students whose programs require immediate practical training.",
+      "agent": "cpt"
+    },
+    {
+      "question": "What documents do I need to bring to a port of entry as an F-1 student?",
+      "ground_truth": "F-1 students need a valid passport, valid F-1 visa stamp, valid I-20 with a valid travel signature, and proof of enrollment or admission.",
+      "agent": "travel"
+    },
+    {
+      "question": "What is an I-94 and how do I check it?",
+      "ground_truth": "The I-94 is the arrival and departure record issued by CBP when entering the US. Students can check their I-94 record online at the CBP website.",
+      "agent": "travel"
+    },
+    {
+      "question": "Can I travel outside the US while on OPT?",
+      "ground_truth": "Yes, students on OPT can travel internationally but must have a valid travel signature, valid passport, valid visa stamp, and their EAD card to re-enter the US.",
+      "agent": "opt"
+    },
+    {
+      "question": "What is the unemployment limit during OPT?",
+      "ground_truth": "Students on standard OPT may have up to 90 days of unemployment. Students on STEM OPT extension may have up to 150 days of unemployment total.",
+      "agent": "opt"
+    },
+    {
+      "question": "How do I request a travel signature from OGS?",
+      "ground_truth": "Students can request a travel signature from OGS by submitting a travel signature request through the OGS online portal or e-form system.",
+      "agent": "travel"
+    },
+    {
+      "question": "What should I do if my SEVIS record is terminated?",
+      "ground_truth": "If your SEVIS record is terminated, you should contact OGS immediately. You may be able to apply for reinstatement or transfer. This is an urgent situation requiring immediate attention.",
+      "agent": "urgency"
+    },
+    {
+      "question": "Can I work off campus without CPT or OPT authorization?",
+      "ground_truth": "No. F-1 students cannot work off campus without proper authorization such as CPT or OPT. Unauthorized employment is a serious violation of F-1 status.",
+      "agent": "visa_status"
+    },
+    {
+      "question": "What is the difference between a visa stamp and F-1 status?",
+      "ground_truth": "A visa stamp is issued by a US embassy and is used to enter the US. F-1 status is maintained through SEVIS and is separate from the visa stamp. A student can be in valid F-1 status even with an expired visa stamp as long as they remain inside the US.",
+      "agent": "travel"
+    },
+    {
+      "question": "How do I book an appointment with an OGS advisor?",
+      "ground_truth": "Students can book an OGS advisor appointment through the OGS online portal. Appointments are available for various visa topics including CPT, OPT, and travel.",
+      "agent": "appointment"
+    },
+    {
+      "question": "What is the reduced course load policy for F-1 students?",
+      "ground_truth": "F-1 students may be authorized for a reduced course load in certain circumstances such as medical conditions or academic difficulties, but must get prior approval from OGS.",
+      "agent": "visa_status"
+    }
+  ]
