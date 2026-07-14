@@ -101,6 +101,14 @@ def format_context(chunks: list[dict]) -> str:
 
     return "\n\n".join(parts)
 
+def warmup() -> None:
+    """Pre-load embedding model and Pinecone index at startup.
+    Eliminates 2-3 second latency on first query."""
+    logger.info("Loading embedding model...")
+    _get_model()
+    logger.info("Connecting to Pinecone...")
+    _get_index()
+    logger.info("Retriever warmup complete")
 
 # ── Main (sanity check) ───────────────────────────────────────────────────────
 
@@ -119,3 +127,5 @@ if __name__ == "__main__":
         print(f"   Top result: {chunks[0]['title']} (score: {chunks[0]['score']})")
         print(f"   URL: {chunks[0]['url']}")
         print()
+        
+        
